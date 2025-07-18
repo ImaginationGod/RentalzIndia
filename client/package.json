@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "node server.js",
-    "render-build": "cd ../client && npm install && npm run build && cd ../server && npm install"
+    "render-build": "cd ../client && npm install && npm run build && cd ../backend && npm install"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
