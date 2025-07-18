@@ -1,5 +1,7 @@
 import React from 'react'
 import { Users, Award, Building2, Heart, TrendingUp, Shield, Target, Globe } from 'lucide-react'
+import PiyushImage from '../assets/Piyush.jpg';
+import DevImage from '../assets/Dev.jpg';
 
 const AboutUs = () => {
   return (
@@ -114,10 +116,7 @@ const AboutUs = () => {
 
           <div className="team-grid">
             <div className="team-member">
-              <img
-                src="client/src/assets/Dev.jpg"
-                alt="Dev Srivastava"
-              />
+              <img src={DevImage} alt="Dev Srivastava" />
               <h3>Dev Srivastava</h3>
               <p>CEO & Principal Broker</p>
               <div className="member-details">
@@ -125,10 +124,7 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="team-member">
-              <img
-                src="client/src/assets/Piyush.jpg"
-                alt="Tanmay Srivastava"
-              />
+              <img src={PiyushImage} alt="Tanmay Srivastava" />
               <h3>Tanmay Srivastava</h3>
               <p>VP of Sales & Operations</p>
               <div className="member-details">
