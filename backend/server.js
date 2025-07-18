@@ -1,7 +1,8 @@
-import express from "express"
+import express from "express";
 import mongoose from "mongoose";
-import cors from "cors"
-import bodyParser from "body-parser"
+import cors from "cors";
+import path from "path";
+import bodyParser from "body-parser";
 import { Property } from './models/property.js'
 import multer from "multer";
 import cloudinary from "cloudinary";
