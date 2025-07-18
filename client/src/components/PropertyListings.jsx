@@ -13,9 +13,14 @@ const PropertyListings = ({ properties, onPropertyClick }) => {
     }
   }, [count])
 
+  const API_URL =
+  import.meta.env.MODE === "development"
+    ? "http://localhost:3000"
+    : ""; // Render will serve from the same domain
+  
   let deleteCard = async (property) => {
     try {
-      let r = await fetch("http://localhost:3000/delete", {
+      let r = await fetch(`${API_URL}/delete`, {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify(property)
       })
