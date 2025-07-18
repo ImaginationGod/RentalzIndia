@@ -17,7 +17,12 @@ const Input = () => {
   } = useForm();
 
   const [uploadedImages, setUploadedImages] = useState([]);
-
+  
+  const API_URL =
+  import.meta.env.MODE === "development"
+    ? "http://localhost:3000"
+    : ""; // Render will serve from the same domain
+  
   const onSubmit = async (data) => {
     setLoading(true);
     const formData = new FormData();
@@ -35,7 +40,7 @@ const Input = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:3000/input", formData, {
+      const res = await axios.post(`${API_URL}/input`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
         // body: JSON.stringify(formData)
       });
