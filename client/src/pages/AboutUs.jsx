@@ -115,7 +115,7 @@ const AboutUs = () => {
           <div className="team-grid">
             <div className="team-member">
               <img
-                src="./src/assets/Dev.jpg"
+                src="client/src/assets/Dev.jpg"
                 alt="Dev Srivastava"
               />
               <h3>Dev Srivastava</h3>
@@ -126,7 +126,7 @@ const AboutUs = () => {
             </div>
             <div className="team-member">
               <img
-                src="./src/assets/Piyush.jpg"
+                src="client/src/assets/Piyush.jpg"
                 alt="Tanmay Srivastava"
               />
               <h3>Tanmay Srivastava</h3>
