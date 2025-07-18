@@ -8,8 +8,13 @@ const Properties = () => {
   const [selectedProperty, setSelectedProperty] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
+  const API_URL =
+  import.meta.env.MODE === "development"
+    ? "http://localhost:3000"
+    : ""; // Render will serve from the same domain
+
   useEffect(() => {
-    axios.get("http://localhost:3000/property").then((res) => setFilteredProperties(res.data));
+    axios.get(`${API_URL}/property`).then((res) => setFilteredProperties(res.data));
   }, []);
 
   const openPropertyModal = (property) => {
