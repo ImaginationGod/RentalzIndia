@@ -22,7 +22,11 @@ const SignIn = () => {
   const [success, setSuccess] = useState(false);
 
   const onSubmit = async (data) => {
-    let r = await fetch("http://localhost:3000/", {
+    const API_URL = import.meta.env.MODE === "development"
+      ? "http://localhost:3000"
+      : "";
+
+    let r = await fetch(`${API_URL}/`, {
       method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     })
