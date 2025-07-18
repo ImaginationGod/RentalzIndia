@@ -8,7 +8,6 @@ import cloudinary from "cloudinary";
 import dotenv from "dotenv";
 
 const app = express()
-const port = process.env.PORT || 3000
 
 dotenv.config();
 app.use(cors())
@@ -103,6 +102,14 @@ app.post('/delete', async (req, res) => {
   }
 })
 
+// ✅ Serve frontend (after Vite build)
+app.use(express.static(path.join(__dirname, "../client/dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+});
+
+//Custom port
+const port = process.env.PORT || 3000
 app.listen(port, () => {
   console.log(`Example app listening on port http://localhost:${port}`)
 })
