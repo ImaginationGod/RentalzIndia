@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import path from "path";
+import { fileURLToPath } from "url";
 import bodyParser from "body-parser";
 import { Property } from './models/property.js'
 import multer from "multer";
