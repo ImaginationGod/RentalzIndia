@@ -21,11 +21,16 @@ const Home = () => {
     setSelectedProperty(null)
     setIsModalOpen(false)
   }
-
+  
+  const API_URL =
+  import.meta.env.MODE === "development"
+    ? "http://localhost:3000"
+    : ""; // Render will serve from the same domain
+  
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await fetch("http://localhost:3000/property");
+        const response = await fetch(`${API_URL}/property`);
         if (!response.ok) {
           throw new Error("Failed to fetch properties");
         }
